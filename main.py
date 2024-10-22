@@ -1,6 +1,7 @@
 import pygame 
 import sys
 import os 
+from Dibujo.Draw import  nave_player
 
 def main ():
     # posicionar la vaentana en la pantalla
@@ -28,7 +29,13 @@ def main ():
             for event in pygame.event.get():
                 if event.type == pygame.QUIT: # Si el gugador cierra la vantana
                     running = False
-            
+
+
+
+
+
+
+
             # Actualizar la pantalla
             pygame.display.flip()
             
