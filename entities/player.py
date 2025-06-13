@@ -2,13 +2,16 @@ import pygame as pg
 from core import config
 
 class Player:
-    def __init__(self, x, y, screen):
-        self.screen = screen
+    def __init__(self, x, y):
         self.pos = pg.Vector2(x / 2, y /2)
-    
-    def draw(self):
-        pg.draw.circle(self.screen, config.BLUE, self.pos, config.RADIUS)
-    
+        self.img = pg.image.load('img/nabe.png').convert_alpha()
+        self.img = pg.transform.scale(self.img, config.PLAYER_SIZE)
+        self.rect = self.img.get_rect(center=self.pos)
+        
+    def draw(self, surface):
+        self.rect.center = self.pos
+        surface.blit(self.img, self.rect)
+        
     def upadate(self):
         keys = pg.key.get_pressed()
         if keys[pg.K_w]:
