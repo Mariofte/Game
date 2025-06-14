@@ -18,20 +18,18 @@ class Game:
     def run(self):
         while config.RUNNIG:
             self.quit()
-            self.player.upadate()
+            self.player.upadate(self.screen)
             self.screen.fill(config.WHITE)
             self.player.draw(self.screen)
-            self.player.upadate()
+            self.player.upadate(self.screen)
             pg.display.update()
             config.DT = self.clock.tick(config.FPS) / 1000
 
         
-        pg.time.wait(3000)   
+        pg.time.wait(1000)   
         pg.quit()
         sys.exit()
     
     def quit(self):
         for event in pg.event.get():
             if event.type == pg.QUIT: config.RUNNIG = False
-        
-        
