@@ -1,13 +1,33 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        
-        {
-            "name": "Game",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "main.py",
-            "console": "integratedTerminal"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "▶ Ejecutar Juego (Pygame)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/main.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "🐞 Debug Juego",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/main.py",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    }
+  ],
+  "compounds": [
+    {
+      "name": "📦 Compilar Juego",
+      "configurations": [],
+      "preLaunchTask": "📦 Compilar .exe (sin consola)"
+    },
+    {
+      "name": "📦 Compilar Juego (Debug)",
+      "configurations": [],
+      "preLaunchTask": "📦 Compilar .exe (con consola / debug)"
+    }
+  ]
 }

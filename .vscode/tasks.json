@@ -1,0 +1,65 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🏁 Ejecutar Pygame",
+      "type": "shell",
+      "command": "${config:python.interpreterPath}",
+      "args": [
+        "${workspaceFolder}/src/main.py"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "📦 Compilar .exe (sin consola)",
+      "type": "shell",
+      "command": "pyinstaller",
+      "args": [
+        "--onefile",
+        "--noconsole",
+        "src/main.py"
+      ],
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "shared",
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "📦 Compilar .exe (con consola / debug)",
+      "type": "shell",
+      "command": "pyinstaller",
+      "args": [
+        "--onefile",
+        "--console",
+        "src/main.py"
+      ],
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🧹 Limpiar compilación",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "Remove-Item -Recurse -Force build, dist, __pycache__, *.spec"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "shared"
+      }
+    }
+  ]
+}
