@@ -1,5 +1,5 @@
-# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
-# & C:\Users\Mario\Dev\Game\.venv\Scripts\Activate.ps1
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="pygame.pkgdata")
 
 from core import Game
 
