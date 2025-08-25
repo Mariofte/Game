@@ -1,4 +1,3 @@
-from turtle import Screen
 import pygame as py
 from constants import PConstants
 

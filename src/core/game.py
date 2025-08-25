@@ -7,8 +7,8 @@ class Game:
         py.init()
         self.screen = py.display.set_mode(GConstants.SIZE)
         self.clock = py.time.Clock()
-        self.runnig = True
-        self.dt = 0
+        self.runnig = bool(True)
+        self.dt = float(0)
         self.player = Player(self.screen)
         self.run()
         py.quit()
