@@ -13,8 +13,7 @@ class Game:
         self.dt = float(0)
         self.player = Player(self.screen)
         self.run()
-        py.quit()
-        sys.exit()
+        self.quit()
     
     def run(self) -> None:
         while self.runnig:
@@ -34,3 +33,7 @@ class Game:
         self.screen.fill(GConstants.COLORS["RED"])
         self.player.draw(self.dt)
         py.display.flip()
+    
+    def quit(self) -> None:
+        py.quit()
+        sys.exit()
