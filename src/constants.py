@@ -34,4 +34,4 @@ class PConstants:
         "BLUE": (0, 0, 255),
         "GRAY": (128, 128, 128),
     }
-    PLAYER: ClassVar[str] = path(os.path.join(PROJECT, 'assets', 'player.png'))
+    PLAYER: ClassVar[str] = path(os.path.join(PROJECT, 'assets', 'sprites', 'player.png'))

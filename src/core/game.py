@@ -1,3 +1,4 @@
+import sys
 import pygame as py
 from entities import Player
 from constants import GConstants
@@ -5,6 +6,7 @@ from constants import GConstants
 class Game:
     def __init__(self) -> None:
         py.init()
+        py.joystick.init()
         self.screen = py.display.set_mode(GConstants.SIZE)
         self.clock = py.time.Clock()
         self.runnig = bool(True)
@@ -12,6 +14,7 @@ class Game:
         self.player = Player(self.screen)
         self.run()
         py.quit()
+        sys.exit()
     
     def run(self) -> None:
         while self.runnig:
